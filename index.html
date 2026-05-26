@@ -1,56 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>IEM Credit Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEM Smart Credit Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<h2>🎓 IEM Credit Calculator</h2>
+    <h2>🎓 IEM Credit Calculator</h2>
 
-<!-- LOGIN -->
-<div class="container" id="loginBox">
-    <h3>Login</h3>
-    <input type="text" id="reg" placeholder="Registration Number">
-    <p id="captchaText"></p>
-    <input type="text" id="captchaInput" placeholder="Enter Captcha">
-    <button onclick="login()">Login</button>
-</div>
+    <div class="container login-card" id="loginBox">
+        <h3>Portal Login</h3>
+        <div class="form-group">
+            <label for="reg">Registration Number</label>
+            <input type="text" id="reg" placeholder="Enter Registration No.">
+        </div>
+        <div class="captcha-wrapper">
+            <span id="captchaText" class="captcha-badge"></span>
+            <input type="text" id="captchaInput" placeholder="Enter Captcha Code">
+        </div>
+        <button class="btn-primary" onclick="login()">Access Calculator</button>
+    </div>
 
-<!-- MAIN APP -->
-<div class="container hidden" id="app">
+    <div class="app-grid hidden" id="app">
+        
+        <div class="panel">
+            <div class="panel-header">🎯 Input Parameters</div>
+            
+            <div class="section-title">Student Profile</div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="roll">Roll No</label>
+                    <input type="text" id="roll" placeholder="Your Roll">
+                </div>
+            </div>
 
-    <h3>Student Profile</h3>
-    <input type="text" id="name" placeholder="Name">
-    <input type="text" id="roll" placeholder="Roll No">
+            <div class="section-title">Online Certifications (MOOCs & IFC)</div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="linkedin">LinkedIn Learning</label>
+                    <input type="number" id="linkedin" min="0" placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label for="coursera">Coursera</label>
+                    <input type="number" id="coursera" min="0" placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label for="udemy">Udemy</label>
+                    <input type="number" id="udemy" min="0" placeholder="0">
+                </div>
+            </div>
 
-    <h3>Certificates</h3>
-    <input type="number" id="linkedin" placeholder="LinkedIn">
-    <input type="number" id="coursera" placeholder="Coursera">
-    <input type="number" id="udemy" placeholder="Udemy">
-    <input type="number" id="iem" placeholder="IEM Learning">
-    <input type="number" id="event" placeholder="Events">
-    <input type="number" id="volunteer" placeholder="Volunteering">
+            <div class="section-title">College & Extracurricular Activities</div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="iem">IEM Learning Platforms</label>
+                    <input type="number" id="iem" min="0" placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label for="event">Technical Events</label>
+                    <input type="number" id="event" min="0" placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label for="volunteer">Volunteering / Social Work</label>
+                    <input type="number" id="volunteer" min="0" placeholder="0">
+                </div>
+            </div>
 
-    <h3>NPTEL</h3>
-    <select id="weeks">
-        <option value="4">4 Weeks</option>
-        <option value="8">8 Weeks</option>
-        <option value="12">12 Weeks</option>
-    </select>
+            <div class="section-title">NPTEL Certification Track</div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="weeks">Course Timeline</label>
+                    <select id="weeks">
+                        <option value="4">4 Weeks Course</option>
+                        <option value="8">8 Weeks Course</option>
+                        <option value="12">12 Weeks Course</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="passed">Exam Status</label>
+                    <select id="passed">
+                        <option value="yes">Passed / Certified</option>
+                        <option value="no">Not Passed</option>
+                    </select>
+                </div>
+            </div>
 
-    <select id="passed">
-        <option value="yes">Passed</option>
-        <option value="no">Not Passed</option>
-    </select>
+            <button class="btn-primary calculate-btn" onclick="calculate()">Compute Evaluation Matrix</button>
+        </div>
 
-    <button onclick="calculate()">Calculate</button>
+        <div class="panel results-panel">
+            <div class="panel-header">📊 Evaluation Dashboard</div>
+            <div id="output" class="empty-output-state">
+                Please enter your credentials/data metrics and click calculate to view your academic standing.
+            </div>
+        </div>
 
-    <div id="output"></div>
+    </div>
 
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
