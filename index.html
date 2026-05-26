@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IEM Credit Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>🎓 IEM Credit Calculator</h2>
+
+<!-- LOGIN -->
+<div class="container" id="loginBox">
+    <h3>Login</h3>
+    <input type="text" id="reg" placeholder="Registration Number">
+    <p id="captchaText"></p>
+    <input type="text" id="captchaInput" placeholder="Enter Captcha">
+    <button onclick="login()">Login</button>
+</div>
+
+<!-- MAIN APP -->
+<div class="container hidden" id="app">
+
+    <h3>Student Profile</h3>
+    <input type="text" id="name" placeholder="Name">
+    <input type="text" id="roll" placeholder="Roll No">
+
+    <h3>Certificates</h3>
+    <input type="number" id="linkedin" placeholder="LinkedIn">
+    <input type="number" id="coursera" placeholder="Coursera">
+    <input type="number" id="udemy" placeholder="Udemy">
+    <input type="number" id="iem" placeholder="IEM Learning">
+    <input type="number" id="event" placeholder="Events">
+    <input type="number" id="volunteer" placeholder="Volunteering">
+
+    <h3>NPTEL</h3>
+    <select id="weeks">
+        <option value="4">4 Weeks</option>
+        <option value="8">8 Weeks</option>
+        <option value="12">12 Weeks</option>
+    </select>
+
+    <select id="passed">
+        <option value="yes">Passed</option>
+        <option value="no">Not Passed</option>
+    </select>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="output"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
