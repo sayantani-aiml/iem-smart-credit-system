@@ -1,8 +1,8 @@
-// CAPTCHA SETUP
+// INITIALIZE CAPTCHA CONFIGURATION
 let captcha = Math.floor(Math.random() * 9000 + 1000);
-const captchaTextElem = document.getElementById("captchaText");
-if (captchaTextElem) {
-    captchaTextElem.innerText = captcha;
+const captchaContainer = document.getElementById("captchaText");
+if (captchaContainer) {
+    captchaContainer.innerText = captcha;
 }
 
 function login() {
@@ -10,12 +10,12 @@ function login() {
     let cap = document.getElementById("captchaInput").value;
 
     if (reg === "" || cap === "") {
-        alert("Fill all fields");
+        alert("Authentication parameters required.");
         return;
     }
 
     if (cap != captcha) {
-        alert("Wrong captcha code");
+        alert("Invalid security captcha code execution.");
         return;
     }
 
@@ -24,94 +24,121 @@ function login() {
 }
 
 function calculate() {
-    // DOM Element Reference Cache
+    // Collect Component Values
     let l = +document.getElementById("linkedin").value || 0;
     let c = +document.getElementById("coursera").value || 0;
     let u = +document.getElementById("udemy").value || 0;
     let i = +document.getElementById("iem").value || 0;
     let e = +document.getElementById("event").value || 0;
     let v = +document.getElementById("volunteer").value || 0;
-
-    // Validation Guard
-    if (l < 0 || c < 0 || u < 0 || i < 0 || e < 0 || v < 0) {
-        alert("Inputs cannot contain negative values");
-        return;
-    }
-
-    // Mathematical Matrix Metrics
-    let ifc = l + c + u;
-    let mar = (l * 2) + (c * 2) + (u * 2) + (i * 2) + (e * 1) + (v * 1);
-
+    
+    // NPTEL Multi-Certificate Tracker variables
+    let nptelCertCount = +document.getElementById("nptelCount").value || 0;
     let weeks = +document.getElementById("weeks").value;
     let passed = document.getElementById("passed").value;
 
-    let moocs = 0;
-    if (passed === "yes") {
-        if (weeks == 4) moocs = 1;
-        else if (weeks == 8) moocs = 2;
-        else if (weeks == 12) moocs = 3;
+    if (l < 0 || c < 0 || u < 0 || i < 0 || e < 0 || v < 0 || nptelCertCount < 0) {
+        alert("Metric inputs cannot contain sub-zero variations.");
+        return;
     }
 
-    // Evaluation Metric Status Flags
-    let marClass = mar >= 25 ? "pass" : "fail";
-    let ifcClass = ifc >= 25 ? "pass" : "fail";
-    let moocsClass = moocs >= 5 ? "pass" : "fail";
+    // Process Computational Formulas
+    let ifc = l + c + u;
+    let mar = (l * 2) + (c * 2) + (u * 2) + (i * 2) + (e * 1) + (v * 1);
 
-    let marStatus = mar >= 25 ? "✅ Clear" : "❌ Deficit";
-    let ifcStatus = ifc >= 25 ? "✅ Clear" : "❌ Deficit";
-    let moocsStatus = moocs >= 5 ? "✅ Clear" : "❌ Deficit";
+    // Calculate Dynamic Multiple NPTEL Credits Array
+    let moocsBasePointsPerCert = 0;
+    if (passed === "yes") {
+        if (weeks === 4) moocsBasePointsPerCert = 1;
+        else if (weeks === 8) moocsBasePointsPerCert = 2;
+        else if (weeks === 12) moocsBasePointsPerCert = 3;
+    }
+    let moocs = moocsBasePointsPerCert * nptelCertCount;
 
-    // Tier Badges
-    let badge = "Beginner 🎯";
-    if (mar > 60) badge = "Pro 🏆";
-    else if (mar > 20) badge = "Intermediate ⚡";
+    // Evaluate Pass States
+    let ifcClass = ifc >= 25 ? "clear" : "deficit";
+    let marClass = mar >= 25 ? "clear" : "deficit";
+    let moocsClass = moocs >= 5 ? "clear" : "deficit";
 
-    // Recommendations Processing Engine
-    let suggestions = [];
-    if (mar < 25) suggestions.push("Prioritize expanding activity metrics to increase absolute MAR distribution value.");
-    if (ifc < 25) suggestions.push("Incorporate structured specialized credential systems (LinkedIn, Coursera, Udemy).");
-    if (moocs < 5) suggestions.push("Register for and complete additional certified NPTEL tracks.");
+    let ifcLabel = ifc >= 25 ? "Cleared" : "Deficit";
+    let marLabel = mar >= 25 ? "Cleared" : "Deficit";
+    let moocsLabel = moocs >= 5 ? "Cleared" : "Deficit";
 
-    let suggestionsHTML = suggestions.length > 0 
-        ? `<ul>${suggestions.map(s => `<li>${s}</li>`).join('')}</ul>`
-        : "<p>🎉 Excellent structure! All minimum baseline criteria are met successfully.</p>";
+    // Set Experience Rank Profile
+    let badge = "Beginner Track 🎯";
+    if (mar > 60) badge = "Pro Architecture 🏆";
+    else if (mar > 20) badge = "Intermediate Level ⚡";
 
-    // Render Engineered View Panel Template
+    // Construct Recommendation Engine Logs
+    let actionItems = [];
+    if (mar < 25) actionItems.push("Increase absolute MAR score density via technical events or institutional platforms.");
+    if (ifc < 25) actionItems.push("Acquire targeted global certification units (LinkedIn, Coursera, Udemy formats).");
+    if (moocs < 5) actionItems.push("Scale NPTEL certificate volume or clear higher-duration configurations.");
+
+    let actionsHTML = "";
+    if (actionItems.length > 0) {
+        actionsHTML = `
+            <div class="action-items-container">
+                <h4>System Optimization Requirements</h4>
+                <ul>${actionItems.map(item => `<li>${item}</li>`).join('')}</ul>
+            </div>`;
+    } else {
+        actionsHTML = `
+            <div class="action-items-container all-clear">
+                <h4>System Optimization Requirements</h4>
+                <p>All core verification profiles cleared successfully. Matrix optimal.</p>
+            </div>`;
+    }
+
+    // Populate Re-Engineered Dashboard
     document.getElementById("output").innerHTML = `
-        <div class="panel-header">📊 Evaluation Dashboard</div>
-        
-        <div class="metric-card ${ifcClass}">
-            <div><strong>IFC Score</strong></div>
-            <div class="metric-val">${ifc} (${ifcStatus})</div>
-        </div>
-        <div class="metric-card ${marClass}">
-            <div><strong>MAR Accumulated</strong></div>
-            <div class="metric-val">${mar} (${marStatus})</div>
-        </div>
-        <div class="metric-card ${moocsClass}">
-            <div><strong>NPTEL MOOCs Count</strong></div>
-            <div class="metric-val">${moocs} (${moocsStatus})</div>
+        <div class="panel-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+            System Metrics Engine
         </div>
 
-        <div class="section-title">Point Multiplication Distribution</div>
-        <div class="form-row" style="font-size:0.85rem; color:var(--text-muted); padding: 5px 0;">
-            <div>LinkedIn: <strong>+${l * 2}</strong></div>
-            <div>Coursera: <strong>+${c * 2}</strong></div>
-            <div>Udemy: <strong>+${u * 2}</strong></div>
+        <div class="bento-card-metric ${ifcClass}">
+            <div class="metric-meta">
+                <div class="title">IFC Core Status</div>
+                <span class="status-badge">${ifcLabel}</span>
+            </div>
+            <div class="metric-numeric-display">${ifc}</div>
         </div>
 
-        <div class="badge-display">
-            Rank Profile: ${badge}
+        <div class="bento-card-metric ${marClass}">
+            <div class="metric-meta">
+                <div class="title">MAR Total Score</div>
+                <span class="status-badge">${marLabel}</span>
+            </div>
+            <div class="metric-numeric-display">${mar}</div>
         </div>
 
-        <div class="section-title">Strategic Action Items</div>
-        <div class="suggestions-box">
-            ${suggestionsHTML}
+        <div class="bento-card-metric ${moocsClass}">
+            <div class="metric-meta">
+                <div class="title">MOOC Tracks Finished</div>
+                <span class="status-badge">${moocsLabel}</span>
+            </div>
+            <div class="metric-numeric-display">${moocs}</div>
         </div>
+
+        <div class="distribution-summary">
+            <div class="form-section-header" style="margin:0;">IFC Distribution Matrix</div>
+            <div class="distribution-grid">
+                <div><span>LinkedIn</span><div>+${l * 2}</div></div>
+                <div><span>Coursera</span><div>+${c * 2}</div></div>
+                <div><span>Udemy</span><div>+${u * 2}</div></div>
+            </div>
+        </div>
+
+        <div class="premium-pill-rank">
+            Profile Status: ${badge}
+        </div>
+
+        ${actionsHTML}
     `;
 
-    // Save Data Object Arrays to Storage
-    let data = { ifc, mar, moocs, date: new Date().toLocaleString() };
+    // Local Storage Archival Record Cache
+    let data = { ifc, mar, moocs, totalNptelCerts: nptelCertCount, date: new Date().toLocaleString() };
     let history = JSON.parse(localStorage.getItem("history") || "[]");
     history.push(data);
     localStorage.setItem("history", JSON.stringify(history));

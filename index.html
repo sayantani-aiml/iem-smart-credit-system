@@ -3,103 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IEM Smart Credit Calculator</title>
+    <title>IEM Smart Credit System — Pro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h2>🎓 IEM Credit Calculator</h2>
+    <header class="app-navbar">
+        <div class="brand">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+            <span>IEM Smart Credit System</span>
+        </div>
+        <div class="version-tag">v2.0 Pro</div>
+    </header>
 
-    <div class="container login-card" id="loginBox">
-        <h3>Portal Login</h3>
-        <div class="form-group">
-            <label for="reg">Registration Number</label>
-            <input type="text" id="reg" placeholder="Enter Registration No.">
+    <div class="login-wrapper" id="loginBox">
+        <div class="premium-card login-card">
+            <h3>Portal Authentication</h3>
+            <p class="subtitle">Enter your academic credentials to unlock your dashboard</p>
+            
+            <div class="form-group">
+                <label>Registration Number</label>
+                <input type="text" id="reg" placeholder="e.g., 12025002003...">
+            </div>
+            
+            <div class="captcha-container">
+                <div id="captchaText" class="premium-captcha"></div>
+                <input type="text" id="captchaInput" placeholder="Security Code">
+            </div>
+            
+            <button class="btn-gradient" onclick="login()">Authenticate Portal</button>
         </div>
-        <div class="captcha-wrapper">
-            <span id="captchaText" class="captcha-badge"></span>
-            <input type="text" id="captchaInput" placeholder="Enter Captcha Code">
-        </div>
-        <button class="btn-primary" onclick="login()">Access Calculator</button>
     </div>
 
-    <div class="app-grid hidden" id="app">
+    <div class="dashboard-container hidden" id="app">
         
-        <div class="panel">
-            <div class="panel-header">🎯 Input Parameters</div>
-            
-            <div class="section-title">Student Profile</div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="Your Name">
+        <main class="input-workspace">
+            <div class="premium-card">
+                <div class="panel-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4z"/></svg>
+                    Data Parameters Engine
                 </div>
-                <div class="form-group">
-                    <label for="roll">Roll No</label>
-                    <input type="text" id="roll" placeholder="Your Roll">
+                
+                <div class="form-section-header">Student Framework</div>
+                <div class="ui-row">
+                    <div class="form-group">
+                        <label>Student Name</label>
+                        <input type="text" id="name" placeholder="Sayantani Das">
+                    </div>
+                    <div class="form-group">
+                        <label>Roll Number</label>
+                        <input type="text" id="roll" placeholder="6">
+                    </div>
+                </div>
+
+                <div class="form-section-header">Global Credentials Matrix (IFC)</div>
+                <div class="ui-row configurations-3col">
+                    <div class="form-group">
+                        <label>LinkedIn Learning</label>
+                        <input type="number" id="linkedin" min="0" placeholder="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Coursera Matrix</label>
+                        <input type="number" id="coursera" min="0" placeholder="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Udemy Assets</label>
+                        <input type="number" id="udemy" min="0" placeholder="0">
+                    </div>
+                </div>
+
+                <div class="form-section-header">Institutional Activity Metrics (MAR)</div>
+                <div class="ui-row configurations-3col">
+                    <div class="form-group">
+                        <label>IEM Learning</label>
+                        <input type="number" id="iem" min="0" placeholder="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Hackathons / Events</label>
+                        <input type="number" id="event" min="0" placeholder="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Volunteering Hub</label>
+                        <input type="number" id="volunteer" min="0" placeholder="0">
+                    </div>
+                </div>
+
+                <div class="form-section-header">National Programme Track (NPTEL MOOCs)</div>
+                <div class="ui-row configurations-3col">
+                    <div class="form-group">
+                        <label>Timeline Variant</label>
+                        <select id="weeks">
+                            <option value="4">4 Weeks Architecture</option>
+                            <option value="8">8 Weeks Architecture</option>
+                            <option value="12">12 Weeks Architecture</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Certificates Count</label>
+                        <input type="number" id="nptelCount" min="0" placeholder="1" value="1">
+                    </div>
+                    <div class="form-group">
+                        <label>Final Assessment</label>
+                        <select id="passed">
+                            <option value="yes">Passed & Certified</option>
+                            <option value="no">Uncertified / Failed</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="btn-gradient dynamic-trigger" onclick="calculate()">Compute Analytics</button>
+            </div>
+        </main>
+
+        <aside class="analytics-stream">
+            <div class="premium-card output-card" id="output">
+                <div class="empty-state">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted); margin-bottom: 16px;"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></aside>
+                    <p>Awaiting Analytics Computation Pipeline</p>
                 </div>
             </div>
-
-            <div class="section-title">Online Certifications (MOOCs & IFC)</div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="linkedin">LinkedIn Learning</label>
-                    <input type="number" id="linkedin" min="0" placeholder="0">
-                </div>
-                <div class="form-group">
-                    <label for="coursera">Coursera</label>
-                    <input type="number" id="coursera" min="0" placeholder="0">
-                </div>
-                <div class="form-group">
-                    <label for="udemy">Udemy</label>
-                    <input type="number" id="udemy" min="0" placeholder="0">
-                </div>
-            </div>
-
-            <div class="section-title">College & Extracurricular Activities</div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="iem">IEM Learning Platforms</label>
-                    <input type="number" id="iem" min="0" placeholder="0">
-                </div>
-                <div class="form-group">
-                    <label for="event">Technical Events</label>
-                    <input type="number" id="event" min="0" placeholder="0">
-                </div>
-                <div class="form-group">
-                    <label for="volunteer">Volunteering / Social Work</label>
-                    <input type="number" id="volunteer" min="0" placeholder="0">
-                </div>
-            </div>
-
-            <div class="section-title">NPTEL Certification Track</div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="weeks">Course Timeline</label>
-                    <select id="weeks">
-                        <option value="4">4 Weeks Course</option>
-                        <option value="8">8 Weeks Course</option>
-                        <option value="12">12 Weeks Course</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="passed">Exam Status</label>
-                    <select id="passed">
-                        <option value="yes">Passed / Certified</option>
-                        <option value="no">Not Passed</option>
-                    </select>
-                </div>
-            </div>
-
-            <button class="btn-primary calculate-btn" onclick="calculate()">Compute Evaluation Matrix</button>
-        </div>
-
-        <div class="panel results-panel">
-            <div class="panel-header">📊 Evaluation Dashboard</div>
-            <div id="output" class="empty-output-state">
-                Please enter your credentials/data metrics and click calculate to view your academic standing.
-            </div>
-        </div>
+        </aside>
 
     </div>
 
