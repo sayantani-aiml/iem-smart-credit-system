@@ -108,10 +108,10 @@ function calculate() {
     let marLabel = mar >= MAR_TARGET ? "Cleared" : "Deficit";
     let moocsLabel = moocs >= MOOC_TARGET ? "Cleared" : "Deficit";
 
-    // Determine Rank Profiles
+   // Determine Rank Profiles
     let badge = "Beginner Track 🎯";
-    if (mar > 60) badge = "Pro Architecture 🏆";
-    else if (mar > 20) badge = "Intermediate Level ⚡";
+    if (mar >= 60) badge = "Pro Architecture 🏆";
+    else if (mar >= 20) badge = "Intermediate Level ⚡"; 
 
     // Build Action Items Output Text Array
     let actionItems = [];
