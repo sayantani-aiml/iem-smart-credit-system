@@ -13,7 +13,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
             <span>IEM Smart Credit System</span>
         </div>
-        <div class="version-tag">v2.0 Pro</div>
+        <div class="version-tag">v2.5 Pro</div>
     </header>
 
     <div class="login-wrapper" id="loginBox">
@@ -22,7 +22,7 @@
             <p class="subtitle">Enter your academic credentials to unlock your dashboard</p>
             
             <div class="form-group">
-                <label>Registration Number</label>
+                <label for="reg">Registration Number</label>
                 <input type="text" id="reg" placeholder="e.g., 12025002003...">
             </div>
             
@@ -47,67 +47,60 @@
                 <div class="form-section-header">Student Framework</div>
                 <div class="ui-row">
                     <div class="form-group">
-                        <label>Student Name</label>
-                        <input type="text" id="name" placeholder="Sayantani Das">
+                        <label for="name">Student Name</label>
+                        <input type="text" id="name" placeholder="Enter full name">
                     </div>
                     <div class="form-group">
-                        <label>Roll Number</label>
-                        <input type="text" id="roll" placeholder="6">
+                        <label for="roll">Roll Number</label>
+                        <input type="text" id="roll" placeholder="Enter roll number">
                     </div>
                 </div>
 
                 <div class="form-section-header">Global Credentials Matrix (IFC)</div>
                 <div class="ui-row configurations-3col">
                     <div class="form-group">
-                        <label>LinkedIn Learning</label>
-                        <input type="number" id="linkedin" min="0" placeholder="0">
+                        <label for="linkedin">LinkedIn Learning</label>
+                        <input type="number" id="linkedin" min="0" placeholder="0" value="0">
                     </div>
                     <div class="form-group">
-                        <label>Coursera Matrix</label>
-                        <input type="number" id="coursera" min="0" placeholder="0">
+                        <label for="coursera">Coursera Matrix</label>
+                        <input type="number" id="coursera" min="0" placeholder="0" value="0">
                     </div>
                     <div class="form-group">
-                        <label>Udemy Assets</label>
-                        <input type="number" id="udemy" min="0" placeholder="0">
+                        <label for="udemy">Udemy Assets</label>
+                        <input type="number" id="udemy" min="0" placeholder="0" value="0">
                     </div>
                 </div>
 
                 <div class="form-section-header">Institutional Activity Metrics (MAR)</div>
                 <div class="ui-row configurations-3col">
                     <div class="form-group">
-                        <label>IEM Learning</label>
-                        <input type="number" id="iem" min="0" placeholder="0">
+                        <label for="iem">IEM Learning</label>
+                        <input type="number" id="iem" min="0" placeholder="0" value="0">
                     </div>
                     <div class="form-group">
-                        <label>Hackathons / Events</label>
-                        <input type="number" id="event" min="0" placeholder="0">
+                        <label for="event">Hackathons / Events</label>
+                        <input type="number" id="event" min="0" placeholder="0" value="0">
                     </div>
                     <div class="form-group">
-                        <label>Volunteering Hub</label>
-                        <input type="number" id="volunteer" min="0" placeholder="0">
+                        <label for="volunteer">Volunteering Hub</label>
+                        <input type="number" id="volunteer" min="0" placeholder="0" value="0">
                     </div>
                 </div>
 
                 <div class="form-section-header">National Programme Track (NPTEL MOOCs)</div>
                 <div class="ui-row configurations-3col">
                     <div class="form-group">
-                        <label>Timeline Variant</label>
-                        <select id="weeks">
-                            <option value="4">4 Weeks Architecture</option>
-                            <option value="8">8 Weeks Architecture</option>
-                            <option value="12">12 Weeks Architecture</option>
-                        </select>
+                        <label for="nptel4">4-Week Certs (1 Cr)</label>
+                        <input type="number" id="nptel4" min="0" placeholder="0" value="0">
                     </div>
                     <div class="form-group">
-                        <label>Certificates Count</label>
-                        <input type="number" id="nptelCount" min="0" placeholder="1" value="1">
+                        <label for="nptel8">8-Week Certs (2 Cr)</label>
+                        <input type="number" id="nptel8" min="0" placeholder="0" value="0">
                     </div>
                     <div class="form-group">
-                        <label>Final Assessment</label>
-                        <select id="passed">
-                            <option value="yes">Passed & Certified</option>
-                            <option value="no">Uncertified / Failed</option>
-                        </select>
+                        <label for="nptel12">12-Week Certs (3 Cr)</label>
+                        <input type="number" id="nptel12" min="0" placeholder="0" value="0">
                     </div>
                 </div>
 
@@ -118,7 +111,7 @@
         <aside class="analytics-stream">
             <div class="premium-card output-card" id="output">
                 <div class="empty-state">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted); margin-bottom: 16px;"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></aside>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-slate); margin-bottom: 16px;"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
                     <p>Awaiting Analytics Computation Pipeline</p>
                 </div>
             </div>

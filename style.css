@@ -23,7 +23,7 @@ body {
     box-sizing: border-box;
 }
 
-/* NAVBAR DESIGN */
+/* APPLICATION TOP NAV BAR */
 .app-navbar {
     display: flex;
     justify-content: space-between;
@@ -59,7 +59,7 @@ body {
     font-weight: 600;
 }
 
-/* CARDS ARCHITECTURE */
+/* CORE PREMIUM COMPONENT CONTAINER Cards */
 .premium-card {
     background: var(--card-bg);
     border: 1px solid var(--card-border);
@@ -78,7 +78,7 @@ body {
     color: var(--text-main);
 }
 
-.panel-title svg { stroke: #00f2fe; }
+.panel-title svg { stroke: var(--accent-cyan); }
 
 .form-section-header {
     font-size: 0.75rem;
@@ -118,7 +118,7 @@ body {
     .dashboard-container { grid-template-columns: 1fr; }
 }
 
-/* FORM FLOW FIELDS */
+/* RESPONSIVE INPUT GRID ALIGNMENTS */
 .ui-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -143,7 +143,7 @@ body {
     padding-left: 2px;
 }
 
-input[type="text"], input[type="number"], select {
+input[type="text"], input[type="number"] {
     background-color: var(--input-bg);
     border: 1px solid var(--card-border);
     border-radius: 12px;
@@ -154,13 +154,13 @@ input[type="text"], input[type="number"], select {
     transition: all 0.2s ease-in-out;
 }
 
-input:focus, select:focus {
+input:focus {
     outline: none;
     border-color: #868cff;
     box-shadow: 0px 4px 20px 0px rgba(67, 24, 255, 0.2);
 }
 
-/* PREMIUM UTILITIES */
+/* PREMIUM ACCESS SYSTEM ACTIONS */
 .captcha-container {
     display: flex;
     gap: 12px;
@@ -200,7 +200,7 @@ input:focus, select:focus {
 
 .dynamic-trigger { width: 100%; margin-top: 25px; padding: 16px; }
 
-/* RE-ENGINEERED SAAS VISUAL STATS */
+/* BENTO DATA INSIGHT ELEMENTS */
 .empty-state {
     text-align: center;
     padding: 100px 20px;
@@ -254,11 +254,10 @@ input:focus, select:focus {
     gap: 10px;
     text-align: center;
     margin-top: 8px;
-    font-size: 0.8rem;
 }
 
-.distribution-grid span { color: var(--text-slate); }
-.distribution-grid div { font-weight: 700; color: var(--text-main); margin-top: 2px; }
+.distribution-grid span { color: var(--text-slate); font-size: 0.8rem; }
+.distribution-grid div { font-size: 1.1rem; font-weight: 800; color: var(--text-main); margin-top: 2px; }
 
 .action-items-container {
     background: rgba(238, 93, 80, 0.03);
