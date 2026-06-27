@@ -11,15 +11,15 @@ A responsive web application that helps students of the **Institute of Engineeri
 ## Images
 
 ### 🔐 Login Page
-![Login](iemscs_authentication.png)
+![Login](iemscs_authentication.JPG)
 
 
 ### 🏠 Home Page
-![Home Page](iemscs_homepage.jpg)
+![Home Page](iemscs_homepage.JPG)
 
 
 ### 📊 Calculator
-![Calculator](iemscs_matrics.png)
+![Calculator](iemscs_matrics.JPG)
 
 
 ## 🚀 Features
