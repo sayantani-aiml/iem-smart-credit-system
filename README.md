@@ -1,68 +1,105 @@
 # 🎓 IEM Credit Calculator
 
-A web-based application to calculate MAR, IFC, and MOOCs points for students of  
-Institute of Engineering and Management (Saltlake).
+A responsive web application that helps students of the **Institute of Engineering and Management (IEM), Salt Lake** calculate their **MAR, IFC, and MOOCs** points quickly and accurately based on the institute's evaluation criteria.
 
 ---
+
+## 🌐 Live Demo
+
+🔗 **Website:**[ https://your-demo-link-here
+](https://sayantani-aiml.github.io/iem-smart-credit-system/)
+---
+
 
 ## 🚀 Features
 
-- Student Login with CAPTCHA
-- Certificate Input System
-- MAR, IFC, MOOCs Calculation
-- Minimum Criteria Validation
-- Certificate Breakdown View
-- Smart Suggestions
-- Achievement Badges
-- History Storage (LocalStorage)
-- Clean and Responsive UI
+* 🔐 Student Login with CAPTCHA
+* 📄 Certificate Input System
+* 📈 MAR, IFC & MOOCs Calculator
+* ✅ Minimum Criteria Validation
+* 📊 Certificate Breakdown
+* 💡 Smart Suggestions
+* 🏅 Achievement Badges
+* 💾 Local Storage Support
+* 📱 Clean & Responsive UI
 
 ---
 
-## 🧠 Formula Used
+## 🧠 Calculation Formula
 
 ### IFC
-Total LinkedIn + Coursera + Udemy certificates
+
+Total LinkedIn + Coursera + Udemy Certificates
 
 ### MAR
-(LinkedIn × 2) + (Coursera × 2) + (Udemy × 2) +  
-(IEM × 2) + (Event × 1) + (Volunteering × 1)
+
+```
+(LinkedIn × 2)
++ (Coursera × 2)
++ (Udemy × 2)
++ (IEM × 2)
++ (Events × 1)
++ (Volunteering × 1)
+```
 
 ### MOOCs
-- 4 Weeks → 1 Point
-- 8 Weeks → 2 Points
-- 12 Weeks → 3 Points
-- Not Passed → 0
+
+| Course Duration | Points |
+| --------------- | -----: |
+| 4 Weeks         |      1 |
+| 8 Weeks         |      2 |
+| 12 Weeks        |      3 |
+| Not Passed      |      0 |
 
 ---
 
 ## 🎯 Minimum Criteria
 
-- MAR ≥ 25
-- IFC ≥ 25
-- MOOCs ≥ 5
+| Category | Required |
+| -------- | -------: |
+| MAR      |     ≥ 25 |
+| IFC      |     ≥ 25 |
+| MOOCs    |      ≥ 5 |
 
 ---
 
 ## 🛠️ Tech Stack
 
-- HTML
-- CSS
-- JavaScript
+* HTML5
+* CSS3
+* JavaScript
 
 ---
 
-## ▶️ How to Run
+## ▶️ Getting Started
 
-1. Download all files
-2. Keep them in one folder
-3. Open `index.html` in browser
+1. Clone the repository
+
+```bash
+git clone https://github.com/sayantani-aiml/iem-credit-calculator.git
+```
+
+2. Open the project folder.
+
+3. Run `index.html` in your browser.
 
 ---
 
 ## 🔥 Future Improvements
 
-- Firebase Authentication (real login)
-- PDF Report Generator
-- Certificate Upload with AI verification
-- Leaderboard system
+* Firebase Authentication
+* PDF Report Generator
+* AI-based Certificate Verification
+* Leaderboard System
+* Cloud Database Integration
+* Dark Mode
+
+---
+
+## 👩‍💻 Developed By
+
+**Sayantani Das** & **Saptarshi Das**
+
+B.Tech CSE (AI & ML) | IEM Kolkata
+
+If you found this project useful, consider giving it a ⭐ on GitHub!
