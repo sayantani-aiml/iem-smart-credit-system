@@ -8,6 +8,18 @@ A responsive web application that helps students of the **Institute of Engineeri
 
 🔗 **Website:**(https://sayantani-aiml.github.io/iem-smart-credit-system/)
 ---
+## Images
+
+### 🔐 Login Page
+![Login](images/iemscs_authentication.png)
+
+
+### 🏠 Home Page
+![Home Page](images/iemscs_homepage.jpg)
+
+
+### 📊 Calculator
+![Calculator](images/iemscs_matrics.png)
 
 
 ## 🚀 Features
