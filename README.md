@@ -6,8 +6,7 @@ A responsive web application that helps students of the **Institute of Engineeri
 
 ## 🌐 Live Demo
 
-🔗 **Website:**[ https://your-demo-link-here
-](https://sayantani-aiml.github.io/iem-smart-credit-system/)
+🔗 **Website:**(https://sayantani-aiml.github.io/iem-smart-credit-system/)
 ---
 
 
